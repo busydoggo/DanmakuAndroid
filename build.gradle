@@ -1,18 +1,27 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '2.2.0'
+}
+
 buildscript {
     repositories {
-        jcenter()
         google()
+        mavenCentral()
+        maven { url 'https://jcenter.bintray.com/' }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+        classpath 'com.android.tools.build:gradle:9.2.0'
     }
 }
 
 allprojects {
     repositories {
-        jcenter()
         google()
+        mavenCentral()
+        maven { url 'https://jcenter.bintray.com/' }
     }
+}
+kotlin {
+    sourceSets.main.kotlin.srcDirs += 'src/main/java'
+    sourceSets.test.kotlin.srcDirs += 'src/test/java'
 }
